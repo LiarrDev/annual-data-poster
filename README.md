@@ -96,3 +96,10 @@ python3 build.py     # 依赖 Pillow：pip3 install Pillow
 ## 数据来源
 
 省界来自阿里云 [DataV.GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector)（`100000_full.json`），仅用于示意读者地域分布，不作为国界依据。
+
+## License
+
+[MIT](LICENSE) © 2026 LiarrDev
+
+内置的 [html2canvas](https://html2canvas.hertzen.com/) 同样以 MIT 发布，版权归其作者所有。
+
