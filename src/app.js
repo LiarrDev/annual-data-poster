@@ -405,18 +405,23 @@ const ICONS = {
   other: `<svg viewBox="0 0 24 24" fill="currentColor">
     <path d="M14.48,13.98q1.02-1.03 1.02-2.47T14.48,9.02T12,8T9.53,9.02T8.5,11.5t1.03,2.47T12,15t2.48-1.03ZM11,23V21H9V19h2V16.9q-1.95-0.35-3.22-1.87T6.5,11.5q0-0.83 0.24-1.63Q6.98,9.07 7.45,8.4L6.8,7.75L5.4,9.15L4,7.75L5.4,6.32L3.5,4.42V7h-2V1h6V3H4.93l1.9,1.9L8.25,3.5l1.4,1.4L8.25,6.32L8.9,6.97q0.68-0.5 1.47-0.74T12,6t1.63,0.24q0.8,0.24 1.48,0.74L19.08,3H16.5V1h6V7h-2V4.42L16.53,8.38Q17,9.07 17.25,9.86T17.5,11.5q0,2-1.27,3.53T13,16.9V19h2v2H13v2H11Z"/></svg>`,
 
-  // 安卓机器人头（眼睛用 evenodd 挖空，露出底色）
-  android: `<svg viewBox="0 0 24 24" fill="currentColor">
-    <path fill-rule="evenodd" d="M4 17.6c0-4.5 3.6-8.1 8-8.1s8 3.6 8 8.1H4Zm3.5-1.7a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1Zm9 0a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1Z"/>
-    <path d="M6.9 7.7 5.4 5M17.1 7.7 18.6 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>`,
+  // 安卓机器人头
+  // 原画布是 24 高但图形只占 y 5–18，收一下 viewBox，免得图标比旁边的小一圈
+  android: `<svg viewBox="0 4 24 15" fill="currentColor">
+    <path d="M1,18q0.25-2.63 1.6-4.78t3.48-3.5L4.15,6.5Q3.93,6.15 4.04,5.75T4.5,5.15Q4.85,4.93 5.25,5.02q0.4,0.1 0.6,0.45l2,3.33Q8.8,8.4 9.84,8.2T12,8t2.16,0.2t1.99,0.6l2-3.33q0.2-0.35 0.6-0.45q0.4-0.1 0.75,0.13q0.35,0.2 0.45,0.6T19.85,6.5L17.93,9.73q2.13,1.35 3.48,3.5T23,18H1Zm17.01-3.79q0.04-0.44-0.24-0.86T17.1,12.8t-0.73,0.1Q16.05,13.13 16,13.55q-0.05,0.43 0.23,0.85q0.27,0.43 0.69,0.56t0.74-0.09t0.36-0.66ZM7.1,14.95q0.4-0.13 0.67-0.55q0.28-0.42 0.24-0.86T7.65,12.88T6.91,12.79T6.23,13.35Q5.95,13.77 6,14.2t0.38,0.65t0.73,0.1Z"/></svg>`,
 
-  apple: `<svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M15.7 3.1c.1 1-.3 1.9-.9 2.6-.7.8-1.7 1.3-2.7 1.2-.1-1 .4-1.9 1-2.6.7-.8 1.7-1.3 2.6-1.2Z"/>
-    <path d="M18.3 12.7c0-2 1.6-3 1.7-3.1-1-1.4-2.5-1.7-3.1-1.7-1.3-.1-2.5.8-3.2.8-.6 0-1.6-.8-2.7-.8-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.4 1 8.5.7 1 1.5 2.1 2.6 2 1-.1 1.4-.7 2.6-.7s1.6.7 2.7.7c1.1 0 1.8-1 2.5-2 .5-.7.7-1.1 1-1.9-2.6-1-3.1-4.2-3.1-4.5Z"/></svg>`,
+  // 苹果：Font Awesome Free 7.3.1 的 apple 图标（CC BY 4.0 / MIT / SIL OFL 多重授权）
+  // viewBox 收紧到图形外框，避免自带的 640 画布留白让图标显得偏小
+  apple: `<svg viewBox="104 70 432 502" fill="currentColor">
+    <path d="M447.1 332.7C446.9 296 463.5 268.3 497.1 247.9C478.3 221 449.9 206.2 412.4 203.3C376.9 200.5 338.1 224 323.9 224C308.9 224 274.5 204.3 247.5 204.3C191.7 205.2 132.4 248.8 132.4 337.5C132.4 363.7 137.2 390.8 146.8 418.7C159.6 455.4 205.8 545.4 254 543.9C279.2 543.3 297 526 329.8 526C361.6 526 378.1 543.9 406.2 543.9C454.8 543.2 496.6 461.4 508.8 424.6C443.6 393.9 447.1 334.6 447.1 332.7zM390.5 168.5C417.8 136.1 415.3 106.6 414.5 96C390.4 97.4 362.5 112.4 346.6 130.9C329.1 150.7 318.8 175.2 321 202.8C347.1 204.8 370.9 191.4 390.5 168.5z"/></svg>`,
 
-  // 手机（其他系统）
-  mobile: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
-    <rect x="7" y="2.8" width="10" height="18.4" rx="2.4"/><path d="M10.6 18.4h2.8" stroke-linecap="round"/></svg>`,
+  // 手机 + 平板（其他系统）。原图是三色的：{{C}} 顶替品牌蓝，{{B}} 顶替那条挖空的白线，
+  // 后置平板的描边用同色半透明，深浅主题下都不会糊在一起。
+  mobile: `<svg viewBox="0 0 48 48" fill="none">
+    <path d="M23 43H43V5H14V15" stroke="{{C}}" stroke-width="3.4" stroke-opacity=".85" stroke-linejoin="round"/>
+    <path d="M5 15H23V43H5L5 15Z" fill="{{C}}"/>
+    <path d="M13 37H15" stroke="{{B}}" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M28 37H30" stroke="{{C}}" stroke-opacity=".85" stroke-width="3.4" stroke-linecap="round"/></svg>`,
 
   desktop: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
     <rect x="2.6" y="4" width="18.8" height="12.4" rx="1.8"/><path d="M8.6 20.4h6.8M12 16.4v4" stroke-linecap="round"/></svg>`,
@@ -430,11 +435,16 @@ function iconSVG(name, color) {
   if (!name) return '';
   // 也接受直接给图片地址（http / data:）或整段 SVG
   if (/^(https?:|data:)/.test(name)) return `<img class="ic" src="${esc(name)}" alt="">`;
-  if (/^</.test(name)) return `<i class="ic">${name.replace(/currentColor/g, color)}</i>`;
-  const body = ICONS[name];
   // 颜色直接写进 SVG 而不是靠 currentColor 继承：导出时 html2canvas 会把内联 SVG
-  // 单独序列化成图片，那时的 currentColor 会退回初始值（黑），图标就跟扇区脱色了
-  return body ? `<i class="ic">${body.replace(/currentColor/g, color)}</i>` : '';
+  // 单独序列化成图片，那时的 currentColor 会退回初始值（黑），图标就跟扇区脱色了。
+  // {{C}} = 该项配置的颜色，{{B}} = 当前主题底色（多色图标里的挖空线用）。
+  const paint = s => s
+    .replace(/{{C}}/g, color)
+    .replace(/{{B}}/g, (T && T.bg) || '#000')
+    .replace(/currentColor/g, color);
+  const body = ICONS[name] || (/^</.test(name) ? name : '');
+  if (!body) return '';
+  return `<i class="ic">${paint(body)}</i>`;
 }
 
 /* ---------- 环形图（带引线标签） ---------- */
