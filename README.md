@@ -35,7 +35,7 @@
 | `year` | 年份，主标题「2025 Year in Review」和主题轮换都读它 |
 | `kicker` / `account` / `heroSub` | 标题上方小字、公众号名、副标题 |
 | `theme` | 可选。`ember` `abyss` `jade` `violet` `amber` `graphite` `sakura` `aurora` `neon` `porcelain` `apricot` `mint` `wisteria`，缺省按年份自动 |
-| `followers.gender[]` | 性别环。项内 `label` `value` `color`，`icon` 可填 `male` `female` `other` |
+| `followers.gender[]` | 性别环。项内 `label` `value` `color`，`icon` 可填 `male` `female` `transgender`（`other` 等价） |
 | `followers.os[]` | 系统环。`icon` 可填 `android` `apple` `mobile` `tablet` `desktop` |
 | `followers.growth` | 增长率数字，右侧自带上扬箭头 |
 | `followers.language[]` / `followers.age[]` | 语言环、年龄环，结构同上（无图标） |
