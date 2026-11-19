@@ -109,4 +109,5 @@ python3 build.py     # 依赖 Pillow：pip3 install Pillow
 [MIT](LICENSE) © 2026 LiarrDev
 
 内置的 [html2canvas](https://html2canvas.hertzen.com/) 同样以 MIT 发布，版权归其作者所有。
+系统环的苹果图标取自 [Font Awesome Free 7.3.1](https://fontawesome.com/license/free)（CC BY 4.0），版权归 Fonticons, Inc.。
 
