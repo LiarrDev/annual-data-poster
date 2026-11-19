@@ -6,7 +6,7 @@
 /* ---------- 调色板 ---------- */
 /* ================= 配色主题 =================
    每套只换「色相层」：背景、主文字、强调色、地图色阶、图表色板。
-   背景一律是暗色，保证文字对比度；换主题不会动版式。 */
+   深色与浅色主题共用版式，浅色主题使用深色文字和更柔和的阴影。 */
 const PAL_KEYS = ['blue','pink','green','orange','gray','cyan','magenta','purple','amber','teal','lilac','rust'];
 
 const THEMES = {
@@ -108,9 +108,53 @@ const THEMES = {
     ramp: ['#3A1040', '#66186E', '#9C2690', '#D84BB0', '#FFA8E0'],
     empty: '#361040',
     pal: ['#5B8DEF','#FF7EB6','#4BE08D','#F2A24A','#C6C2D0','#43E0FF','#FF4FC0','#9A7CFF','#F2D04B','#35C0B8','#C09BF0','#E06A4A']
+  },
+  porcelain: {
+    name: '云白', light: true,
+    bg: '#F4F7FB', bg2: '#E8F0F8',
+    ink: '#315C7D', ink2: '#173A59', dim: '#6E879B',
+    inkRGB: '49,92,125', shadowRGB: '170,190,207',
+    hot: '#3E8EC6', hot2: '#23638F',
+    mark: '#C47A32',
+    ramp: ['#E4EDF4', '#BDD5E5', '#82AECB', '#447FA6', '#1F547B'],
+    empty: '#E1E9EF',
+    pal: ['#3978B8','#D46A88','#369479','#C77B35','#7D8B99','#309FA8','#B64E8D','#7568B5','#B28A2E','#2C8983','#8A72B0','#B65F45']
+  },
+  apricot: {
+    name: '暖杏', light: true,
+    bg: '#FFF8F0', bg2: '#F8EADC',
+    ink: '#9A513D', ink2: '#5E2F25', dim: '#A97461',
+    inkRGB: '154,81,61', shadowRGB: '222,190,169',
+    hot: '#E56F51', hot2: '#B94734',
+    mark: '#2D8C82',
+    ramp: ['#F7E8DA', '#EDC5AA', '#DF9672', '#C96145', '#8E3529'],
+    empty: '#F0E1D5',
+    pal: ['#4D7CA8','#C95F7C','#4E9271','#D08036','#91877E','#3B9994','#B44E76','#8068A5','#AE842E','#337F78','#96759F','#B55B3E']
+  },
+  mint: {
+    name: '薄荷', light: true,
+    bg: '#F3FAF6', bg2: '#E2F1E8',
+    ink: '#3D7661', ink2: '#204A3B', dim: '#749484',
+    inkRGB: '61,118,97', shadowRGB: '177,205,188',
+    hot: '#42A57B', hot2: '#237052',
+    mark: '#A56E25',
+    ramp: ['#E2F0E7', '#B9DAC7', '#7EBB98', '#438E68', '#245B43'],
+    empty: '#DFEBE3',
+    pal: ['#477FA6','#C86880','#3D8E68','#C18238','#7F9087','#349995','#A8517C','#746FA6','#9D8634','#2E7E70','#7E8E5F','#AE664A']
+  },
+  wisteria: {
+    name: '紫藤', light: true,
+    bg: '#FAF7FC', bg2: '#EEE6F5',
+    ink: '#76558F', ink2: '#49315F', dim: '#9481A4',
+    inkRGB: '118,85,143', shadowRGB: '204,188,215',
+    hot: '#9A6FBD', hot2: '#6D448F',
+    mark: '#2E8F87',
+    ramp: ['#EEE6F3', '#D5C2E2', '#B394C9', '#8461A1', '#57396F'],
+    empty: '#E8E0ED',
+    pal: ['#537DAF','#C66C8F','#4B927B','#C08043','#8C8493','#3D969D','#A9578B','#7965AC','#A38336','#387F78','#9673A7','#AE654D']
   }
 };
-const THEME_KEYS = ['ember', 'abyss', 'jade', 'violet', 'amber', 'graphite', 'sakura', 'aurora', 'neon'];
+const THEME_KEYS = ['ember', 'abyss', 'jade', 'violet', 'amber', 'graphite', 'sakura', 'aurora', 'neon', 'porcelain', 'apricot', 'mint', 'wisteria'];
 
 /* 旧版色板：本地存过的数据里的颜色按槽位平移到新色板 */
 const LEGACY_PALS = {
@@ -193,14 +237,16 @@ function applyTheme(key) {
   put('--hot-rgb', hexRGB(to.hot));
   put('--mark', to.mark);
   put('--mark-rgb', hexRGB(to.mark));
-  // 由主题色算出的派生色：球体、活跃圆点
-  put('--ball-hi', mixHex(to.bg, to.ink, .62));
-  put('--ball-mid', mixHex(to.bg, to.ink, .42));
-  put('--ball-lo', mixHex(to.bg, to.hot, .26));
-  put('--dot-hi', hexRGB(mixHex(to.ink2, '#ffffff', .18)));
-  put('--dot-mid', hexRGB(mixHex(to.hot, to.ink, .42)));
-  put('--dot-lo', hexRGB(mixHex(to.bg, to.hot, .38)));
-  put('--page', mixHex(to.bg, '#000000', .62));
+  // 浅色主题保留深色文字，装饰球和圆点改为更轻的渐变
+  put('--ball-hi', mixHex(to.bg, to.ink, to.light ? .16 : .62));
+  put('--ball-mid', mixHex(to.bg, to.ink, to.light ? .3 : .42));
+  put('--ball-lo', mixHex(to.bg, to.hot, to.light ? .48 : .26));
+  put('--dot-hi', hexRGB(to.light ? mixHex(to.hot, '#ffffff', .62) : mixHex(to.ink2, '#ffffff', .18)));
+  put('--dot-mid', hexRGB(to.light ? to.hot : mixHex(to.hot, to.ink, .42)));
+  put('--dot-lo', hexRGB(to.light ? to.hot2 : mixHex(to.bg, to.hot, .38)));
+  put('--page', mixHex(to.bg, '#000000', to.light ? .08 : .62));
+  put('--poster-shadow-alpha', to.light ? '.22' : '.7');
+  put('--photo-shadow-alpha', to.light ? '.24' : '.5');
 }
 
 /* ---------- 示例数据（把这里换成你的真实数据） ---------- */
@@ -659,7 +705,7 @@ function mapHTML(d) {
       }).join('L') + 'Z';
     }));
     inset = `<g>
-      <rect x="${ix0}" y="${iy0}" width="${iw}" height="${ih}" fill="${mixHex(T.bg, '#000000', .5)}" stroke="rgba(${hexRGB(T.mark)},.42)" stroke-width=".8"/>
+      <rect x="${ix0}" y="${iy0}" width="${iw}" height="${ih}" fill="${T.light ? mixHex(T.bg, T.ink, .08) : mixHex(T.bg, '#000000', .5)}" stroke="rgba(${hexRGB(T.mark)},.42)" stroke-width=".8"/>
       <path d="${dp}" fill="${T.ramp[2]}" stroke="rgba(${hexRGB(T.mark)},.32)" stroke-width=".5"/>
       <text x="${ix0 + iw / 2}" y="${iy0 + ih - 6}" fill="rgba(${T.inkRGB},.72)" font-size="8.5" text-anchor="middle" font-family="PingFang SC,sans-serif">南海诸岛</text>
     </g>`;
@@ -1106,7 +1152,7 @@ function buildForm() {
 
   return `
   ${sec('配色主题', `<div class="full">${themeChips()}</div>
-    <div class="full theme-tip">九套都是暗色底，只换色相。默认按年份自动轮换（2025 赤焰 / 2026 深海 / 2027 松林 …），也可以在这里直接挑；选定后会写进数据，明年复制一份改年份就行。</div>`, true, THEMES[DATA.theme] ? THEMES[DATA.theme].name : '自动')}
+    <div class="full theme-tip">九套深色、四套浅色，版式不变。默认按年份自动轮换（2025 赤焰 / 2026 深海 / 2027 松林 …），也可以在这里直接挑；选定后会写进数据，明年复制一份改年份就行。</div>`, true, THEMES[DATA.theme] ? THEMES[DATA.theme].name : '自动')}
 
   ${sec('基础信息', `
     ${fld('年份', numIn('year', DATA.year, '1'))}
@@ -1176,7 +1222,7 @@ function themeChips() {
   const cur = (DATA.theme && THEMES[DATA.theme]) ? DATA.theme : autoTheme(DATA.year);
   return `<div class="theme-row">` + THEME_KEYS.map(k => {
     const t = THEMES[k];
-    return `<div class="theme-chip${k === cur ? ' on' : ''}" data-theme="${k}" style="background:${t.bg}">
+    return `<div class="theme-chip${t.light ? ' light' : ''}${k === cur ? ' on' : ''}" data-theme="${k}" style="background:${t.bg}">
       <i style="background:${t.ink};box-shadow:0 0 10px rgba(${hexRGB(t.ink)},.45)"></i>
       <b style="color:${t.ink2}">${t.name}</b>
     </div>`;

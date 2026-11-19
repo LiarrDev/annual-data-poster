@@ -10,7 +10,7 @@
 
 - **单文件、纯前端**：`index.html` 双击即开，断网也能用，不依赖任何 CDN 或构建服务
 - **双编辑器**：可视化表单 + 原始 JSON，随时切换；表单改完即时重绘
-- **9 套深色配色**，按年份自动轮换，也可手动锁定。换主题时数据里的色板色会整体平移，自己调过的颜色不动
+- **13 套配色（9 深色 + 4 浅色）**，按年份自动轮换，也可手动锁定。换主题时数据里的色板色会整体平移，自己调过的颜色不动
 - **10 个板块**：关注者画像（性别 / 系统 / 增长 / 语言 / 年龄）、地域分布地图、增长趋势、互动、文章数据、阅读来源、内容分类、活跃热力、阅读 Top10、每日阅读日历
 - **图表全是手写 SVG**，导出走 html2canvas，1.6 倍图（约 1536px 宽，微信够用；JPG 约 1.7MB）
 - 数据存在浏览器 `localStorage`，关掉再开还在；「恢复示例」一键回到初始数据
@@ -34,7 +34,7 @@
 | --- | --- |
 | `year` | 年份，主标题「2025 Year in Review」和主题轮换都读它 |
 | `kicker` / `account` / `heroSub` | 标题上方小字、公众号名、副标题 |
-| `theme` | 可选。`ember` `abyss` `jade` `violet` `amber` `graphite` `sakura` `aurora` `neon`，缺省按年份自动 |
+| `theme` | 可选。`ember` `abyss` `jade` `violet` `amber` `graphite` `sakura` `aurora` `neon` `porcelain` `apricot` `mint` `wisteria`，缺省按年份自动 |
 | `followers.gender[]` | 性别环。项内 `label` `value` `color`，`icon` 可填 `male` `female` `other` |
 | `followers.os[]` | 系统环。`icon` 可填 `android` `apple` `mobile` `tablet` `desktop` |
 | `followers.growth` | 增长率数字，右侧自带上扬箭头 |
@@ -69,8 +69,12 @@
 | `sakura` | 绯樱 | `#1C0A14` | 樱粉 + 新绿点缀 |
 | `aurora` | 极光 | `#051318` | 极光青 + 紫 / 粉 |
 | `neon` | 霓虹 | `#0A0714` | 电光青 + 品红 / 酸性绿 |
+| `porcelain` | 云白 | `#F4F7FB` | 雾蓝 + 暖橙点缀 |
+| `apricot` | 暖杏 | `#FFF8F0` | 杏橙 + 青绿点缀 |
+| `mint` | 薄荷 | `#F3FAF6` | 薄荷绿 + 琥珀点缀 |
+| `wisteria` | 紫藤 | `#FAF7FC` | 紫藤 + 青绿点缀 |
 
-背景一律深色，保证长图在手机上滑动时的文字对比度；换主题只换色相层，版式不动。轮换规则：`autoTheme(year)` = `(year - 2025) % 9`，即 2025 赤焰、2026 深海、2027 松林、2028 夜紫……
+换主题只换色相层，版式不动；浅色主题同步使用深色文字、反相地图色阶和更柔和的阴影。轮换规则：`autoTheme(year)` = `(year - 2025) % 13`，即 2025 赤焰、2026 深海、2027 松林、2028 夜紫……
 
 ## 二次开发
 

@@ -25,6 +25,8 @@
   --dot-hi:255,211,184;
   --dot-mid:255,93,125;
   --dot-lo:119,27,54;
+  --poster-shadow-alpha:.7;
+  --photo-shadow-alpha:.5;
 
   /* ===== 工具界面：中性深色，不随主题变 ===== */
   --page:#0A0A0C;
@@ -67,7 +69,7 @@ body{
   overflow:hidden;
   isolation:isolate;
   padding:0 0 76px;
-  box-shadow:0 30px 90px rgba(0,0,0,.7);
+  box-shadow:0 30px 90px rgba(0,0,0,var(--poster-shadow-alpha));
 }
 /* 颗粒质感 */
 .poster::before{
@@ -117,7 +119,7 @@ body{
   line-height:1.02;
   color:var(--ink);
   letter-spacing:.005em;
-  text-shadow:0 0 26px rgba(var(--hot-rgb),.3), 3px 4px 0 rgba(0,0,0,.35);
+  text-shadow:0 0 26px rgba(var(--hot-rgb),.3), 3px 4px 0 rgba(var(--shadow-rgb),.45);
 }
 .hero-t .yr{
   font-size:.86em;
@@ -185,7 +187,7 @@ body{
   background:var(--panel-3);
   border:3px solid rgba(255,255,255,.84);
   border-bottom-width:16px;
-  box-shadow:0 12px 26px rgba(0,0,0,.5);
+  box-shadow:0 12px 26px rgba(0,0,0,var(--photo-shadow-alpha));
   overflow:hidden;
 }
 .polar i{display:block;width:100%;height:100%;background-size:cover;background-position:center}
@@ -393,6 +395,9 @@ body{
 }
 .theme-chip:hover{border-color:rgba(255,255,255,.34)}
 .theme-chip.on{border-color:rgba(255,255,255,.62);box-shadow:0 0 0 1px rgba(255,255,255,.5)}
+.theme-chip.light{border-color:rgba(0,0,0,.16)}
+.theme-chip.light:hover{border-color:rgba(0,0,0,.42)}
+.theme-chip.light.on{border-color:var(--ui);box-shadow:0 0 0 1px var(--ui)}
 .theme-chip b{font-size:9px;font-weight:500;letter-spacing:.06em}
 .theme-chip i{display:block;width:18px;height:18px;border-radius:50%}
 .theme-tip{font-size:10px;line-height:1.7;color:var(--ui-3);padding:0 0 14px;letter-spacing:.03em}
@@ -483,7 +488,7 @@ body{
 
   <div class="pane" id="paneJson">
     <div class="drawer-help">
-      <div><code>theme</code> 换配色：<code>ember</code> <code>abyss</code> <code>jade</code> <code>violet</code> <code>amber</code> <code>graphite</code> <code>sakura</code> <code>aurora</code> <code>neon</code>；删掉则按年份自动</div>
+      <div><code>theme</code> 换配色：<code>ember</code> <code>abyss</code> <code>jade</code> <code>violet</code> <code>amber</code> <code>graphite</code> <code>sakura</code> <code>aurora</code> <code>neon</code> <code>porcelain</code> <code>apricot</code> <code>mint</code> <code>wisteria</code>；删掉则按年份自动</div>
       <div><code>gender / os</code> 某项填 <code>icon</code> 就是图标标签：<code>male</code> <code>female</code> <code>other</code> <code>android</code> <code>apple</code> <code>mobile</code> <code>tablet</code> <code>desktop</code>，也可填图片 URL 或整段 SVG</div>
       <div>扇形/柱子的数值填百分比或人数都行，会自动归一到 100%</div>
       <div>图片字段可填 URL，也可在「可视化」里直接选本地图（会自动压缩内嵌）</div>
