@@ -449,9 +449,11 @@ function donutHTML(segs, o = {}) {
     // 图标标签是居中的一列，锚点再往外让出半个图标宽
     const lx = cx + dir * (rOut + lg + (isIcon ? 17 : 0));
     const mid = cx + dir * (rOut + lg * 0.5);
+    // 指示线跟扇区同色：暗底上细点线几乎看不见，实线 + 实心锚点才能一眼对应到扇区
+    const col = l.s.color || T.ink;
     lines += `<path d="M${l.ax.toFixed(1)} ${l.ay.toFixed(1)} L${mid.toFixed(1)} ${l.ay.toFixed(1)} L${mid.toFixed(1)} ${l.y.toFixed(1)} L${(lx - dir * (isIcon ? 15 : 4)).toFixed(1)} ${l.y.toFixed(1)}"
-      fill="none" stroke="rgba(${T.inkRGB},.26)" stroke-width=".9" stroke-dasharray="1.6 3"/>`;
-    lines += `<circle cx="${l.ax.toFixed(1)}" cy="${l.ay.toFixed(1)}" r="1.6" fill="rgba(${T.inkRGB},.62)"/>`;
+      fill="none" stroke="${col}" stroke-opacity=".75" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    lines += `<circle cx="${l.ax.toFixed(1)}" cy="${l.ay.toFixed(1)}" r="2.3" fill="${col}" stroke="${T.bg}" stroke-width="1"/>`;
 
     if (isIcon) {
       labels += `<div class="dn-i" style="left:${lx.toFixed(1)}px;top:${l.y.toFixed(1)}px">
