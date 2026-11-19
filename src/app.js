@@ -12,72 +12,115 @@ const PAL_KEYS = ['blue','pink','green','orange','gray','cyan','magenta','purple
 const THEMES = {
   ember: {
     name: '赤焰',
-    bg: '#2A0507', bg2: '#3A080B',
-    ink: '#FF7A72', ink2: '#FFB0A0', dim: '#B85F62',
-    inkRGB: '255,140,130', shadowRGB: '70,0,8',
-    hot: '#F2317E', hot2: '#B81858',
+    bg: '#24060A', bg2: '#360B10',
+    ink: '#FF8A7A', ink2: '#FFC9A8', dim: '#C06A66',
+    inkRGB: '255,138,122', shadowRGB: '58,4,10',
+    hot: '#FF3D7F', hot2: '#C21E5C',
     mark: '#4BE3D2',
-    ramp: ['#4d1e06', '#7d4712', '#a86c1f', '#d79c33', '#f2e36b'],
-    empty: '#5a2409',
-    pal: ['#4E6FC4','#F07A8E','#4BC08D','#E48942','#C6C2BE','#3FDCCB','#CE2A8A','#6E62A8','#E8A33C','#2FA8A0','#9C8FD0','#B5553A']
+    ramp: ['#4a1508', '#7c3410', '#b05a1a', '#e08c2e', '#ffd978'],
+    empty: '#521c0c',
+    pal: ['#5B8DEF','#F27E9D','#4FD08F','#F09A4A','#C9C4BF','#43E0D0','#E0409A','#8B7CF0','#F2B84B','#35B8AE','#B49BE8','#D06A45']
   },
   abyss: {
     name: '深海',
-    bg: '#06121A', bg2: '#0A1E2B',
-    ink: '#7FC8EA', ink2: '#B4E6FA', dim: '#5A93AC',
-    inkRGB: '130,198,228', shadowRGB: '3,18,30',
-    hot: '#35A8D8', hot2: '#1B6E9E',
+    bg: '#051019', bg2: '#0A2133',
+    ink: '#7CC9EE', ink2: '#C0ECFF', dim: '#5F9AB5',
+    inkRGB: '124,201,238', shadowRGB: '2,14,26',
+    hot: '#2FB3E8', hot2: '#17719F',
     mark: '#FFC46B',
-    ramp: ['#12405f', '#1a5c85', '#2a7fa8', '#48aecb', '#95e6f2'],
-    empty: '#183a52',
-    pal: ['#3E93D8','#E87FA8','#38C4B4','#E0A050','#A9C0D4','#5FD2E4','#B06AB8','#7E7FD8','#E8C860','#2FA0A8','#9C8FD0','#C87B5A']
+    ramp: ['#0E3A5C', '#155E8C', '#2389B8', '#46C0DC', '#A8F0F6'],
+    empty: '#14344E',
+    pal: ['#4BA3E8','#F08BB0','#3ED0C0','#EFAF5C','#B8CBDC','#63DCEC','#C077C8','#8B8CF0','#F0D06A','#33AFB8','#AC9FE8','#D88A66']
   },
   jade: {
     name: '松林',
-    bg: '#06130E', bg2: '#081C14',
-    ink: '#7FDCA8', ink2: '#B6F2CE', dim: '#549A78',
-    inkRGB: '128,212,170', shadowRGB: '2,26,18',
-    hot: '#35C089', hot2: '#1B7F58',
+    bg: '#06130E', bg2: '#0A2016',
+    ink: '#7FE0AC', ink2: '#C2F6D6', dim: '#5AA981',
+    inkRGB: '127,224,172', shadowRGB: '2,24,16',
+    hot: '#2ECC8F', hot2: '#178A5C',
     mark: '#FFD166',
-    ramp: ['#154833', '#1c6444', '#278a5c', '#55c184', '#bcefa2'],
-    empty: '#1a4530',
-    pal: ['#3FAE9A','#E8878C','#5FC46E','#DFA24A','#BCCFC4','#3FD8C6','#C05A9A','#7C82C0','#E0C860','#2F8F8E','#A0C07A','#C07A50']
+    ramp: ['#12452E', '#1B6A45', '#28965F', '#5CD08C', '#C8F5A8'],
+    empty: '#17402C',
+    pal: ['#46BFA8','#F09095','#66D478','#E8AE55','#C4D6CA','#43E0CE','#D066A6','#8A90D4','#EAD36A','#35A09C','#AECE85','#D08A5C']
   },
   violet: {
     name: '夜紫',
-    bg: '#0D0917', bg2: '#151021',
-    ink: '#B79BF2', ink2: '#DCCBFF', dim: '#7E6AAF',
-    inkRGB: '182,158,240', shadowRGB: '8,4,22',
-    hot: '#8A5CF0', hot2: '#5A33AE',
+    bg: '#0D0917', bg2: '#171126',
+    ink: '#BCA0F5', ink2: '#E4D6FF', dim: '#8A74BD',
+    inkRGB: '188,160,245', shadowRGB: '8,4,22',
+    hot: '#9A66FF', hot2: '#6438C4',
     mark: '#5FE0CE',
-    ramp: ['#2c2355', '#43326e', '#5d4798', '#9378d8', '#e0cfff'],
-    empty: '#302555',
-    pal: ['#8577E6','#E26FA8','#4BC0C8','#E09A48','#C6BFD8','#5FD6E0','#C05AB0','#A48CF0','#E8C258','#2F9FA8','#9A8FD8','#C0705A']
+    ramp: ['#2A2158', '#453377', '#654CA8', '#9C7FE8', '#E8DBFF'],
+    empty: '#2C2358',
+    pal: ['#9186F0','#EC7AB4','#52CCD4','#EDA656','#CFC8E2','#68DEE8','#D066C0','#B29AF8','#F0CC64','#36AEB6','#A79AE0','#D07C64']
   },
   amber: {
     name: '琥珀',
-    bg: '#14100A', bg2: '#1F180F',
-    ink: '#E8C083', ink2: '#FAE2B8', dim: '#A88A5C',
-    inkRGB: '232,194,134', shadowRGB: '26,18,2',
-    hot: '#DE9A3C', hot2: '#A2681A',
+    bg: '#131007', bg2: '#201A0E',
+    ink: '#EFC88A', ink2: '#FFE9C4', dim: '#B3925F',
+    inkRGB: '239,200,138', shadowRGB: '24,16,2',
+    hot: '#F0A83E', hot2: '#B57518',
     mark: '#6FD8C0',
-    ramp: ['#3a2a12', '#5f4720', '#8a6b30', '#b89448', '#e2ca8e'],
-    empty: '#3c2d14',
-    pal: ['#C89A50','#D2735E','#8FAF5E','#E0A63C','#D6C8A8','#4FC8B8','#C2607A','#9A7AA8','#E8C25C','#3F8F8A','#B092C0','#A8703C']
+    ramp: ['#3C2B10', '#654A1E', '#93702C', '#C69E44', '#F0D896'],
+    empty: '#38290F',
+    pal: ['#D8A85C','#E08064','#9CBF66','#F0B445','#E0D2B0','#55D4C2','#D26C88','#A886B8','#F2D066','#45A098','#BCA0D0','#BC7E44']
   },
   graphite: {
     name: '石墨',
-    bg: '#0C0D10', bg2: '#14161A',
-    ink: '#C9D1DB', ink2: '#ECF1F8', dim: '#7E8894',
-    inkRGB: '202,212,224', shadowRGB: '0,0,0',
-    hot: '#6E96CC', hot2: '#40628F',
-    mark: '#E0B860',
-    ramp: ['#28313d', '#3a4755', '#546678', '#8a9eae', '#d8e4ee'],
-    empty: '#2c353f',
-    pal: ['#7096B8','#C08C96','#7FB49A','#D0A868','#B9C2CC','#5FC8CC','#A87A9A','#8A93B8','#D8BE82','#4F9A96','#A79AC0','#A87C64']
+    bg: '#0C0D10', bg2: '#16181D',
+    ink: '#CDD6E0', ink2: '#F2F6FC', dim: '#87919E',
+    inkRGB: '205,214,224', shadowRGB: '0,0,0',
+    hot: '#7BA6DC', hot2: '#4870A2',
+    mark: '#E8C068',
+    ramp: ['#262F3A', '#3B4856', '#5A6E80', '#93A8B8', '#E2ECF4'],
+    empty: '#2A333D',
+    pal: ['#7BAAD0','#CC96A0','#88C2A6','#DCB472','#C4CDD6','#68D2D6','#B486A6','#959EC4','#E4C88C','#57A8A2','#B2A6CC','#B4886E']
+  },
+  sakura: {
+    name: '绯樱',
+    bg: '#1C0A14', bg2: '#2A1020',
+    ink: '#F79AC0', ink2: '#FFD3E4', dim: '#B76E92',
+    inkRGB: '247,154,192', shadowRGB: '26,4,18',
+    hot: '#F0509E', hot2: '#B22C70',
+    mark: '#9FE8B8',
+    ramp: ['#4A1533', '#75254F', '#A63C72', '#D96BA0', '#FFC9DE'],
+    empty: '#45172F',
+    pal: ['#7C9BE8','#F28BB0','#5FCFA0','#EFAF62','#D8C4CE','#5FD8D4','#E85CA8','#A98CF0','#F0CE74','#3FB4AC','#C8A8E8','#D8825E']
+  },
+  aurora: {
+    name: '极光',
+    bg: '#051318', bg2: '#082028',
+    ink: '#6CF2DC', ink2: '#C0FFF2', dim: '#4CC4B2',
+    inkRGB: '108,242,220', shadowRGB: '2,16,22',
+    hot: '#9A6BFF', hot2: '#6242C8',
+    mark: '#FF8FB8',
+    ramp: ['#0D3A4A', '#12607A', '#1B96A0', '#3FD4BC', '#B4FFE8'],
+    empty: '#10393B',
+    pal: ['#5FA8E8','#F08BB8','#4FE0A0','#EFAF5C','#B8D2CC','#54E0DC','#C77AE0','#8B8CF0','#EDD06A','#35B8B0','#B49BE8','#D88A66']
+  },
+  neon: {
+    name: '霓虹',
+    bg: '#0A0714', bg2: '#120C22',
+    ink: '#6EE7FF', ink2: '#C4F4FF', dim: '#55A8C4',
+    inkRGB: '110,231,255', shadowRGB: '6,2,18',
+    hot: '#FF3DA6', hot2: '#C21E7A',
+    mark: '#C8FF4B',
+    ramp: ['#3A1040', '#66186E', '#9C2690', '#D84BB0', '#FFA8E0'],
+    empty: '#361040',
+    pal: ['#5B8DEF','#FF7EB6','#4BE08D','#F2A24A','#C6C2D0','#43E0FF','#FF4FC0','#9A7CFF','#F2D04B','#35C0B8','#C09BF0','#E06A4A']
   }
 };
-const THEME_KEYS = ['ember', 'abyss', 'jade', 'violet', 'amber', 'graphite'];
+const THEME_KEYS = ['ember', 'abyss', 'jade', 'violet', 'amber', 'graphite', 'sakura', 'aurora', 'neon'];
+
+/* 旧版色板：本地存过的数据里的颜色按槽位平移到新色板 */
+const LEGACY_PALS = {
+  ember: ['#4E6FC4','#F07A8E','#4BC08D','#E48942','#C6C2BE','#3FDCCB','#CE2A8A','#6E62A8','#E8A33C','#2FA8A0','#9C8FD0','#B5553A'],
+  abyss: ['#3E93D8','#E87FA8','#38C4B4','#E0A050','#A9C0D4','#5FD2E4','#B06AB8','#7E7FD8','#E8C860','#2FA0A8','#9C8FD0','#C87B5A'],
+  jade: ['#3FAE9A','#E8878C','#5FC46E','#DFA24A','#BCCFC4','#3FD8C6','#C05A9A','#7C82C0','#E0C860','#2F8F8E','#A0C07A','#C07A50'],
+  violet: ['#8577E6','#E26FA8','#4BC0C8','#E09A48','#C6BFD8','#5FD6E0','#C05AB0','#A48CF0','#E8C258','#2F9FA8','#9A8FD8','#C0705A'],
+  amber: ['#C89A50','#D2735E','#8FAF5E','#E0A63C','#D6C8A8','#4FC8B8','#C2607A','#9A7AA8','#E8C25C','#3F8F8A','#B092C0','#A8703C'],
+  graphite: ['#7096B8','#C08C96','#7FB49A','#D0A868','#B9C2CC','#5FC8CC','#A87A9A','#8A93B8','#D8BE82','#4F9A96','#A79AC0','#A87C64']
+};
 
 let T = THEMES.ember;        // 当前主题对象，渲染时统一读它
 let curTheme = 'ember';      // 数据里的颜色当前对应哪套主题
@@ -114,6 +157,18 @@ function recolorData(from, to) {
   if (f) ['gender', 'os', 'language', 'age'].forEach(k => paint(f[k]));
   if (DATA && DATA.sources) paint(DATA.sources.data);
   if (DATA) paint(DATA.classification);
+}
+
+/* 缺色的数据项按槽位补色：颜色为 undefined 时 JSON 存储会丢掉该字段，旧数据需要自愈 */
+function healColors(d) {
+  const paint = arr => {
+    if (!Array.isArray(arr)) return;
+    arr.forEach((it, i) => { if (it && !it.color) it.color = T.pal[i % T.pal.length]; });
+  };
+  const f = d.followers;
+  if (f) ['gender', 'os', 'language', 'age'].forEach(k => paint(f[k]));
+  if (d.sources) paint(d.sources.data);
+  paint(d.classification);
 }
 
 function applyTheme(key) {
@@ -234,7 +289,7 @@ const DEFAULT_DATA = {
     unit: 'Times',
     data: [
       { label: 'Recommended',    value: 73.2, color: P.blue },
-      { label: 'Search',         value: 21.5, color: P.salmon },
+      { label: 'Search',         value: 21.5, color: P.pink },
       { label: 'Official Msg',   value: 2.8,  color: P.amber },
       { label: 'Moment',         value: 1.4,  color: P.orange },
       { label: 'Official Page',  value: 0.5,  color: P.teal },
@@ -820,6 +875,7 @@ function render(d) {
   const tk = (d.theme && THEMES[d.theme]) ? d.theme : autoTheme(d.year);
   if (tk !== curTheme) applyTheme(tk);
   d.theme = tk;
+  healColors(d);
   const poster = document.getElementById('poster');
   poster.innerHTML = [
     heroHTML(d),
@@ -1048,7 +1104,7 @@ function buildForm() {
 
   return `
   ${sec('配色主题', `<div class="full">${themeChips()}</div>
-    <div class="full theme-tip">六套都是暗色底，只换色相。默认按年份自动轮换（2025 赤焰 / 2026 深海 / 2027 松林 …），也可以在这里直接挑；选定后会写进数据，明年复制一份改年份就行。</div>`, true, THEMES[DATA.theme] ? THEMES[DATA.theme].name : '自动')}
+    <div class="full theme-tip">九套都是暗色底，只换色相。默认按年份自动轮换（2025 赤焰 / 2026 深海 / 2027 松林 …），也可以在这里直接挑；选定后会写进数据，明年复制一份改年份就行。</div>`, true, THEMES[DATA.theme] ? THEMES[DATA.theme].name : '自动')}
 
   ${sec('基础信息', `
     ${fld('年份', numIn('year', DATA.year, '1'))}
@@ -1275,6 +1331,8 @@ function boot() {
   DATA = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_DATA));
   // 数据里的颜色属于哪套主题：有 theme 就是它，旧版数据默认赤焰
   curTheme = (DATA.theme && THEMES[DATA.theme]) ? DATA.theme : 'ember';
+  const legacy = LEGACY_PALS[curTheme];
+  if (legacy) recolorData({ pal: legacy }, THEMES[curTheme]);
   applyTheme(curTheme, { recolor: false });
   render(DATA);
 
